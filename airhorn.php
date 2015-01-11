@@ -1,6 +1,7 @@
 <?php
 /**
  * Plugin Name: Air Horn
+ * Plugin URI: https://github.com/octalmage/AirHorn/
  * Version: 0.0.1
  * Author: Jason Stallings
  * Author URI: http://jason.stallin.gs
