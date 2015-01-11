@@ -21,7 +21,7 @@ function air_horn_actually_playsound()
 {
 	if (get_user_meta( get_current_user_id(), 'air_horn_playsound', true ) == 1)
 	{	
-        update_user_meta(get_current_user_id(), 'air_horn_playsound', 0);
+		update_user_meta(get_current_user_id(), 'air_horn_playsound', 0);
 		?>
 		<audio  autoplay>
   			<source src="<?php echo plugins_url( 'airhorn.mp3', __FILE__ ); ?>" type="audio/mpeg">
