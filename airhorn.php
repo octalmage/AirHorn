@@ -37,7 +37,11 @@ function air_horn_toolbar($wp_admin_bar)
                 'title' => 'Air Horn',
                 'meta'  => array( 'class' => 'airhorn_button' )
         );
-        $wp_admin_bar->add_node( $args );
+        
+        if (is_admin())
+        {
+        	$wp_admin_bar->add_node( $args );
+       	}
 }
 
 function air_horn_load_scripts() 
