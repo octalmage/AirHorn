@@ -12,11 +12,18 @@ add_action('admin_footer', 'air_horn_actually_playsound');
 add_action('admin_bar_menu', 'air_horn_toolbar', 999);
 add_action( 'admin_enqueue_scripts', 'air_horn_load_scripts');
 
+
+/**
+ * Set flag to indicate that user has logged in and air horn needs to play. 
+ */
 function air_horn_sound_setflag($user_login, $user)
 {
 	update_user_meta($user->ID, 'air_horn_playsound', 1);
 }
 
+/**
+ * Play air horn if user has just logged in. 
+ */
 function air_horn_actually_playsound()
 {
 	if (get_user_meta( get_current_user_id(), 'air_horn_playsound', true ) == 1)
@@ -30,6 +37,9 @@ function air_horn_actually_playsound()
 	}
 }
 
+/**
+ * Add Air Horn button to admin bar. 
+ */
 function air_horn_toolbar($wp_admin_bar) 
 {
         $args = array(
@@ -44,6 +54,9 @@ function air_horn_toolbar($wp_admin_bar)
        	}
 }
 
+/**
+ * Load required scripts in the backend. 
+ */
 function air_horn_load_scripts() 
 {
 	wp_register_script('howler', plugins_url( 'howler.min.js', __FILE__ ));
