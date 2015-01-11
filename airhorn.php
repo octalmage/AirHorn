@@ -10,7 +10,7 @@
 add_action('wp_login', 'air_horn_sound_setflag', 10, 2);
 add_action('admin_footer', 'air_horn_actually_playsound');
 add_action('admin_bar_menu', 'air_horn_toolbar', 999);
-add_action( 'admin_enqueue_scripts', 'air_horn_load_scripts' );
+add_action( 'admin_enqueue_scripts', 'air_horn_load_scripts');
 
 function air_horn_sound_setflag($user_login, $user)
 {
